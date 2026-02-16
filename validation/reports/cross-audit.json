@@ -1,0 +1,110 @@
+{
+  "timestamp": "2026-02-16T10:00:44.616Z",
+  "lightGardenByMetaverse": {
+    "authorityGate": {
+      "passed": false,
+      "note": "No explicit authority gate directory"
+    },
+    "deterministicReplay": {
+      "passed": true,
+      "note": "golden=true traces=true"
+    },
+    "posixTransport": {
+      "passed": true,
+      "note": "cserver=true websocket=true bus=false"
+    },
+    "projectionDisposable": {
+      "passed": true,
+      "note": "projection=true artifacts=true"
+    },
+    "strictMode": {
+      "passed": true,
+      "note": "7/7 scripts use strict mode"
+    },
+    "score": 4,
+    "total": 5
+  },
+  "metaverseByLightGarden": {
+    "fanoEncoding": {
+      "passed": true,
+      "note": "world-ir compiler present"
+    },
+    "wordNetIntegration": {
+      "passed": true,
+      "note": "external wordnet available"
+    },
+    "ndjsonTraces": {
+      "passed": true,
+      "note": "Found 3 NDJSON files"
+    },
+    "ledArrays": {
+      "passed": true,
+      "note": "firmware layer available"
+    },
+    "featureAudit": {
+      "passed": true,
+      "note": "feature audit available"
+    },
+    "score": 5,
+    "total": 5
+  },
+  "mergePoints": [
+    {
+      "name": "authority-gate",
+      "source": "metaverse/invariants/authority",
+      "target": "geometry-spine/authority",
+      "priority": "high"
+    },
+    {
+      "name": "trace-format",
+      "source": "light-garden/audit/traces",
+      "target": "geometry-spine/trace",
+      "priority": "high"
+    },
+    {
+      "name": "rpc-bridge",
+      "source": "both",
+      "target": "geometry-spine/rpc/mcp-gateway",
+      "priority": "high"
+    },
+    {
+      "name": "geometry-pfister",
+      "source": "light-garden+metaverse",
+      "target": "geometry-spine/geometry/pfister-128",
+      "priority": "medium"
+    },
+    {
+      "name": "cross-validation",
+      "source": "both",
+      "target": "geometry-spine/validation/cross-audit",
+      "priority": "medium"
+    }
+  ],
+  "recommendations": [
+    {
+      "for": "light-garden",
+      "action": "Wrap external-facing mutating services with authority gate",
+      "priority": "high"
+    },
+    {
+      "for": "light-garden",
+      "action": "Raise shell strict-mode coverage",
+      "priority": "medium"
+    },
+    {
+      "for": "metaverse",
+      "action": "Add semantic WordNet integration adapter",
+      "priority": "high"
+    },
+    {
+      "for": "metaverse",
+      "action": "Adopt NDJSON traces for audit/replay",
+      "priority": "high"
+    },
+    {
+      "for": "geometry-spine",
+      "action": "Implement MCP gateway AWK/SED validators with authority check",
+      "priority": "high"
+    }
+  ]
+}

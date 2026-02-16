@@ -1,0 +1,12 @@
+{
+  "name": "Metaverse Asset #{id}",
+  "description": "A unique asset in the Geometry Spine Metaverse",
+  "image": "ipfs://QmPlaceholder/{id}.png",
+  "attributes": [
+    { "trait_type": "Pfister Class", "value": "{pfisterClass}" },
+    { "trait_type": "Fano Matrix", "value": "{fanoMatrix}" },
+    { "trait_type": "Platonic Class", "value": "{platonicClass}" },
+    { "trait_type": "Arch Transform", "value": "{archTransform}" },
+    { "trait_type": "Catalan Attestation", "value": "{catalanResult}" }
+  ]
+}

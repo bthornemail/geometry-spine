@@ -1,0 +1,5 @@
+FROM node:18-alpine
+RUN apk add --no-cache git python3 make g++
+WORKDIR /app
+RUN npm install -g hardhat
+CMD ["node", "-e", "console.log(\"bootstrap container ready\")"]

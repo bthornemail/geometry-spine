@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: geometry-spine
+  namespace: geometry-system
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: geometry-spine
+  template:
+    metadata:
+      labels:
+        app: geometry-spine
+    spec:
+      containers:
+      - name: geometry-spine
+        image: geometry-spine:latest
+        ports:
+        - containerPort: 3030
+          name: mcp-http
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+          limits:
+            memory: "256Mi"
+            cpu: "500m"

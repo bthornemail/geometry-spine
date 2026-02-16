@@ -1,0 +1,15 @@
+[Unit]
+Description=MCP HTTP Bridge
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/geometry-spine/rpc/mcp-gateway
+ExecStart=/usr/bin/node /root/geometry-spine/rpc/mcp-gateway/http-bridge.js
+Restart=always
+RestartSec=5
+Environment=PORT=3030
+
+[Install]
+WantedBy=multi-user.target

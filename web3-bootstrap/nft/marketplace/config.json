@@ -1,0 +1,10 @@
+{
+  "marketplace": {
+    "name": "Geometry Spine Marketplace",
+    "fee": 0.025,
+    "acceptedTokens": ["WETH", "DAI", "USDC", "MVRS"]
+  },
+  "offlineMode": true,
+  "rpcUrl": "http://127.0.0.1:8545",
+  "chainId": 31337
+}

@@ -1,0 +1,26 @@
+[chain]
+id = 31337
+gas_limit = 30000000
+block_time = 0
+
+[accounts]
+mnemonic = "test test test test test test test test test test test junk"
+count = 10
+balance = "10000"
+
+[genesis]
+timestamp = 0
+base_fee = 1000000000
+
+[mining]
+auto_mine = true
+interval = 0
+
+[logging]
+silent = false
+color = true
+
+[rpc]
+port = 8545
+host = "0.0.0.0"
+cors = true

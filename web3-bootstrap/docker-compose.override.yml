@@ -1,0 +1,13 @@
+services:
+  metadata-server:
+    image: nginx:alpine
+    profiles:
+      - metadata
+    ports:
+      - "8081:80"
+    volumes:
+      - ./nft/metadata:/usr/share/nginx/html:ro
+    networks:
+      - stream-net
+    depends_on:
+      - pattern-generator

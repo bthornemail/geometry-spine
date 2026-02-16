@@ -1,0 +1,45 @@
+services:
+  pattern-generator:
+    build:
+      context: .
+      dockerfile: Dockerfile.pattern
+    ports:
+      - "8545:8545"
+    command: ["node", "generate-patterns.js"]
+    networks:
+      - stream-net
+
+  content-router:
+    image: ipfs/kubo:latest
+    command:
+      - daemon
+      - --offline
+    networks:
+      - stream-net
+
+  stream-gateway:
+    build:
+      context: ..
+      dockerfile: packaging/docker/Dockerfile
+    ports:
+      - "3030:3030"
+    environment:
+      - AUTHORITY_STRICT=false
+      - STREAM_MODE=true
+    networks:
+      - stream-net
+
+  light-simulator:
+    image: node:18-alpine
+    working_dir: /sim
+    volumes:
+      - ./scripts:/sim:ro
+    command: ["node", "light-simulator.js"]
+    depends_on:
+      - stream-gateway
+    networks:
+      - stream-net
+
+networks:
+  stream-net:
+    driver: bridge

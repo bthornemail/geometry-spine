@@ -1,0 +1,16 @@
+{"event":"merge_analysis","timestamp":"2026-02-16T23:04:00Z"}
+{"event":"overlap","domain":"identity","metaverse":"capabilities/identity/authority/gate","light-garden":"audit/features/capabilities/semantic-mapping.js","merge_point":"geometry-spine/authority/identity-gate"}
+{"event":"overlap","domain":"trace","metaverse":"runtime/trace","light-garden":"audit/traces/*.ndjson","merge_point":"geometry-spine/trace/canonical-format"}
+{"event":"overlap","domain":"rpc","metaverse":"pipelines/adapter-rpc","light-garden":"wordnet/server.js (REST API)","merge_point":"geometry-spine/rpc/mcp-gateway"}
+{"event":"overlap","domain":"geometry","metaverse":"world-ir/compiler/ir.md","light-garden":"audit/features/capabilities/geometric-encoding.js","merge_point":"geometry-spine/geometry/pfister-128"}
+{"event":"overlap","domain":"validation","metaverse":"invariants/authority/tests","light-garden":"audit/scripts/run-feature-audit.js","merge_point":"geometry-spine/validation/cross-audit"}
+{"event":"gap","domain":"semantic_wordnet","present_in":"light-garden","missing_in":"metaverse","action":"integrate_wordnet_as_capability"}
+{"event":"gap","domain":"firmware_esp32","present_in":"light-garden","missing_in":"metaverse","action":"integrate_firmware_as_hardware_layer"}
+{"event":"gap","domain":"platonic_classification","present_in":"metaverse_concept","missing_in":"light-garden","action":"add_platonic_validator_to_geometry-spine"}
+{"event":"gap","domain":"archimedean_transforms","present_in":"metaverse_concept","missing_in":"light-garden","action":"add_arch_negotiation_to_geometry-spine"}
+{"event":"gap","domain":"catalan_attestation","present_in":"metaverse_concept","missing_in":"light-garden","action":"add_catalan_validator_to_geometry-spine"}
+{"event":"merge_strategy","layer":"authority","source":"metaverse/invariants/authority","target":"geometry-spine/authority","integration":"wrap_all_services"}
+{"event":"merge_strategy","layer":"trace","source":"light-garden/audit/traces","target":"geometry-spine/trace","integration":"adopt_ndjson_format_with_canonicalization"}
+{"event":"merge_strategy","layer":"rpc","source":"both","target":"geometry-spine/rpc/mcp-gateway","integration":"awk_sed_bridge_with_authority_check"}
+{"event":"merge_strategy","layer":"geometry","source":"light-garden/audit/features + metaverse/world-ir","target":"geometry-spine/geometry/pfister-128","integration":"combine_fano_matrix_with_platonic_classes"}
+{"event":"merge_strategy","layer":"validation","source":"both","target":"geometry-spine/validation/cross-audit","integration":"reciprocal_audit_ndjson_golden_negative"}
